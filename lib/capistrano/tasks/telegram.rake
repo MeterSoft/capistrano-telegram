@@ -6,6 +6,11 @@ namespace :telegram do
       Capistrano::Telegram.new(self).send(:updating)
     end
 
+    desc 'Notify about updating deploy front'
+    task :updating_front do
+      Capistrano::Telegram.new(self).send(:updating_front)
+    end
+
     desc 'Notify about reverting deploy'
     task :reverting do
       Capistrano::Telegram.new(self).send(:reverting)
@@ -14,6 +19,11 @@ namespace :telegram do
     desc 'Notify about updated deploy'
     task :updated do
       Capistrano::Telegram.new(self).send(:updated)
+    end
+
+    desc 'Notify about updated front deploy backend'
+    task :updated_front do
+      Capistrano::Telegram.new(self).send(:updated_front)
     end
 
     desc 'Notify about reverted deploy'

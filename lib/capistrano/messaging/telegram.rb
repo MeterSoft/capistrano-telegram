@@ -10,7 +10,13 @@ module Capistrano
 
       def payload_for_updating
         {
-          text: "#{deployer} has started deploying branch #{branch} of #{application} to #{stage}"
+          text: "#{deployer} has started deploying branch #{branch} of #{application} to #{stage} BACKEND"
+        }
+      end
+
+      def payload_for_updating_front
+        {
+          text: "#{deployer} has started deploying branch #{branch} of #{application} to #{stage} FRONTEND"
         }
       end
 
@@ -22,7 +28,13 @@ module Capistrano
 
       def payload_for_updated
         {
-          text: "#{deployer} has finished deploying branch #{branch} of #{application} to #{stage}"
+          text: "#{deployer} has finished deploying branch #{branch} of #{application} to #{stage} BACKEND"
+        }
+      end
+
+      def payload_for_updated_front
+        {
+          text: "#{deployer} has finished deploying branch #{branch} of #{application} to #{stage} FRONTEND"
         }
       end
 
